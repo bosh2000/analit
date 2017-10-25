@@ -23,5 +23,17 @@ namespace Analit
 		{
 			InitializeComponent();
 		}
+
+		private void Grid_KeyDown(object sender,KeyEventArgs e )
+		{
+
+			textBlock1.Text = e.Key.ToString();
+		}
+
+		private void GridLoaded(object sender,RoutedEventArgs e)
+		{
+			mainGrid.Focus();
+		}
+
 	}
 }

@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Analit"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Button/>
+    <Grid x:Name="mainGrid" KeyDown="Grid_KeyDown" Focusable="True" Loaded="GridLoaded">
+          <TextBlock Grid.Column="0" Grid.Row="0" x:Name="textBlock1" Width="100" Height="20" Text="123"/>
+
     </Grid>
 </Window>
