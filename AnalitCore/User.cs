@@ -19,7 +19,7 @@ namespace AnalitCore
 			this.login = login;
 			this.password = password;
 		}
-		
+
 		/// <summary>
 		/// Проверка введенного пароля с хешем из базы 
 		/// </summary>
@@ -27,21 +27,21 @@ namespace AnalitCore
 		public bool CheckPassword()
 		{
 			bool returnValue = false;
-			MySqlConnect myCon = new MySqlConnect();
+			MySqlData myCon = new MySqlData();
 			MySqlDataReader dataReader = myCon.GetUserData(this.login);
 			while (dataReader.Read())
 			{
-				MD5 mD5hash=MD5.Create();
+				MD5 mD5hash = MD5.Create();
 				string hash = GetMd5Hash(mD5hash, password);
-				if (VerifyMd5Hash(mD5hash,dataReader["Password"].ToString(),hash))
+				if (VerifyMd5Hash(mD5hash, dataReader["Password"].ToString(), hash))
 				{
-					returnValue=true;
+					returnValue = true;
 				}
 			}
 			myCon.CloseConnection();
 			return returnValue;
 		}
-		
+
 		public string GetMd5Hash(MD5 md5Hash, string input)
 		{
 			byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
@@ -55,14 +55,14 @@ namespace AnalitCore
 
 			return sBuilder.ToString();
 		}
-		
+
 		public bool VerifyMd5Hash(MD5 md5Hash, string input, string hash)
 		{
-			string hashOfInput = GetMd5Hash(md5Hash, input);
+//			string hashOfInput = GetMd5Hash(md5Hash, input);
 
 			StringComparer comparer = StringComparer.OrdinalIgnoreCase;
 
-			if (0 == comparer.Compare(hashOfInput, hash))
+			if (0 == comparer.Compare(input, hash))
 			{
 				return true;
 			}
