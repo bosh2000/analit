@@ -6,14 +6,15 @@ using MySql.Data.MySqlClient;
 
 namespace MysqlCore
 {
-	public class MySqlConnect
+	public class MySqlData
 	{
 		string connectionString = "Database=analit;Data Source=127.0.0.1;User Id=root;Password=627753!q";
 		string userSelectSql="SELECT Login, Password , UserRigths FROM analit.login WHERE Login=@LoginParam ;";
+		private string countDocument = "SELECT COUNT(*) FROM analit.saledocument";
 		private MySqlConnection myConnectiion;
 
 
-		public MySqlConnect()
+		public MySqlData()
 		{
 			try
 			{
@@ -25,7 +26,24 @@ namespace MysqlCore
 				throw;
 			}
 		}
-
+		/// <summary>
+		/// Получение количества строк для получения номера документа
+		/// </summary>
+		/// <returns></returns>
+		public long GetNumberLines()
+		{
+			MySqlCommand cmd=new MySqlCommand(countDocument,myConnectiion);
+			myConnectiion.Open();
+			MySqlDataReader rdr = cmd.ExecuteReader();
+			long value = 0;
+			while (rdr.Read())   ///?????
+			{
+				value = (long)rdr[0];
+			}
+			this.CloseConnection();
+			return value;
+		}
+		
 		/// <summary>
 		/// Получение данных о пользователе по логину
 		/// </summary>
@@ -39,6 +57,7 @@ namespace MysqlCore
 			cmd.Parameters.AddWithValue("@LoginParam", userLogin);
 			
 			MySqlDataReader rdr= cmd.ExecuteReader();
+			this.CloseConnection();
 			return rdr;
 		}
 

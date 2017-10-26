@@ -33,7 +33,8 @@ namespace Analit
 
 		private void Grid_KeyDown(object sender,KeyEventArgs e )
 		{
-
+			SaleDocument saleDocument=new SaleDocument();
+			saleDocument.GetLastNumberDocument();
 			textBlock1.Text = e.Key.ToString();
 		}
 
