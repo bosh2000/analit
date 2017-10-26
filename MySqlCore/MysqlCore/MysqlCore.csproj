@@ -43,16 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IMySqlUser.cs" />
     <Compile Include="MySqlConnect.cs" />
-    <Compile Include="MySqlUserCore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\AnalitCore\AnalitCore.csproj">
-      <Project>{20F7A5FB-3864-431B-83A3-31B51BA4C679}</Project>
-      <Name>AnalitCore</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

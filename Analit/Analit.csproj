@@ -126,5 +126,15 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AnalitCore\AnalitCore.csproj">
+      <Project>{20f7a5fb-3864-431b-83a3-31b51ba4c679}</Project>
+      <Name>AnalitCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MySqlCore\MysqlCore\MysqlCore.csproj">
+      <Project>{753022e6-503c-495c-ba05-83e049a819e1}</Project>
+      <Name>MysqlCore</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

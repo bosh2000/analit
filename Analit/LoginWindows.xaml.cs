@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using AnalitCore;
 
+
 namespace Analit
 {
 	/// <summary>
@@ -31,8 +32,13 @@ namespace Analit
 				MessageBox.Show("Не введен логин или пароль пользователя!", "Ошибка");
 				return;
 			}
-			User 
-			MainWindow mWnd = new MainWindow();
+			User user = new User(LoginTextBox.Text, PasswordTextBox.Password);
+			if (!user.CheckPassword())
+			{
+				MessageBox.Show("Не правильный логин или пароль!", "Ошибка");
+				return;
+			}
+			MainWindow mWnd = new MainWindow(user);
 			mWnd.Show();
 			this.Close();
 		}

@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using AnalitCore;
 namespace Analit
 {
 	/// <summary>
@@ -19,9 +19,16 @@ namespace Analit
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		private User loginUser;
 		public MainWindow()
 		{
 			InitializeComponent();
+		}
+
+		public MainWindow(User user) :this()
+		{
+			loginUser = user;
+			textBlock1.Text = loginUser.login;
 		}
 
 		private void Grid_KeyDown(object sender,KeyEventArgs e )
