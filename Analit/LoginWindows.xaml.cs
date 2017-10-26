@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AnalitCore;
 
 namespace Analit
 {
@@ -25,16 +26,15 @@ namespace Analit
 
 		private void okButton_Click(object sender, RoutedEventArgs e)
 		{
-			if (LoginTextBox.Text=="" && PasswordTextBox.Password=="")
-				{
-				MessageBox.Show("Не введен логин или пароль пользователя!","Ошибка");
-				}
-
+			if (LoginTextBox.Text == "" && PasswordTextBox.Password == "")
+			{
+				MessageBox.Show("Не введен логин или пароль пользователя!", "Ошибка");
+				return;
+			}
+			User 
 			MainWindow mWnd = new MainWindow();
 			mWnd.Show();
 			this.Close();
 		}
-
-		
 	}
 }
