@@ -25,6 +25,11 @@ namespace Analit
 
 		private void okButton_Click(object sender, RoutedEventArgs e)
 		{
+			if (LoginTextBox.Text=="" && PasswordTextBox.Password=="")
+				{
+				MessageBox.Show("Не введен логин или пароль пользователя!","Ошибка");
+				}
+
 			MainWindow mWnd = new MainWindow();
 			mWnd.Show();
 			this.Close();
