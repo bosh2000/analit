@@ -12,6 +12,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using AnalitCore;
+using System.Collections;
+
 namespace Analit
 {
 	/// <summary>
@@ -25,17 +27,20 @@ namespace Analit
 			InitializeComponent();
 		}
 
-		public MainWindow(User user) :this()
+		public MainWindow(User user) 
 		{
+			InitializeComponent();
 			loginUser = user;
-			textBlock1.Text = loginUser.login;
+			EntityString enList = new EntityString() { title = "Название 1", priceEntity = 20, amount = 232 };
+			((ArrayList)EntityList.Resources["entityString"]).Add(enList);
+			//textBlock1.Text = loginUser.login;
 		}
 
 		private void Grid_KeyDown(object sender,KeyEventArgs e )
 		{
 			SaleDocument saleDocument=new SaleDocument();
 			saleDocument.GetLastNumberDocument();
-			textBlock1.Text = e.Key.ToString();
+			//textBlock1.Text = e.Key.ToString();
 		}
 
 		private void GridLoaded(object sender,RoutedEventArgs e)

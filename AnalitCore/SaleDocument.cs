@@ -52,7 +52,7 @@ namespace AnalitCore
 		{
 			
 			MySqlData myCon=new MySqlData();
-			var value=myCon.GetNumberLines();
+			long value=myCon.GetNumberLines();
 			return value;
 		}
 	}

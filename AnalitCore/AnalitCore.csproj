@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityString.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="SaleDocument.cs" />
     <Compile Include="User.cs" />

@@ -4,10 +4,44 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Analit"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+        xmlns:AnalitCore="clr-namespace:AnalitCore;assembly=AnalitCore"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid x:Name="mainGrid" KeyDown="Grid_KeyDown" Focusable="True" Loaded="GridLoaded">
-          <TextBlock Grid.Column="0" Grid.Row="0" x:Name="textBlock1" Width="100" Height="20" Text="123"/>
-
+        Title="MainWindow" Height="500" Width="800" ResizeMode="NoResize">
+    <Grid  x:Name="mainGrid" KeyDown="Grid_KeyDown" Focusable="True" Loaded="GridLoaded">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ListView Name="EntityList" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" Grid.RowSpan="3" ItemsSource="{DynamicResource ResourceKey=entityString}" FontSize="20">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=title}" Width="550">Наименование</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=priceEntity}" Width="110">Цена</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=amount}" Width="110">Сумма</GridViewColumn>
+                </GridView>
+            </ListView.View>
+            <ListView.Resources>
+                <col:ArrayList x:Key="entityString">
+                </col:ArrayList>
+            </ListView.Resources>
+        </ListView>
+        <Label x:Name="LabelID" Grid.Column="0" Grid.Row="3" FontSize="20">Код: 1</Label>
+        <Label x:Name="LabelPrice" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" FontSize="20">Цена : 00.00</Label>
     </Grid>
 </Window>

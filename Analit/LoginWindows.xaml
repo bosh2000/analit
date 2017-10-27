@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Analit"
         mc:Ignorable="d"
-        Title="LoginWindows" Height="300" Width="300" ResizeMode="NoResize">
+        Title="LoginWindows" Height="300" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid x:Name="mainGrid">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -22,7 +22,7 @@
         <Button x:Name="okButton" Height="20" Width="100" Content="ok"  Click="okButton_Click" Grid.ColumnSpan="2" Grid.Column="1"  Grid.Row="2"/>
         <TextBox x:Name="LoginTextBox" Grid.Column="1" Margin="0,0,0,42" Grid.Row="1" Grid.ColumnSpan="2"/>
         <PasswordBox x:Name="PasswordTextBox" Grid.Column="1" Margin="0,40,0,0" Grid.Row="1" Grid.ColumnSpan="2"/>
-        <Label Content="Login" Margin="0,67,0,42" Grid.RowSpan="2"/>
+        <Label Content="Login" Margin="0,67,0,33" Grid.RowSpan="2"/>
         <Label Content="Password" Margin="-5,40,5,0" Grid.Row="1"/>
 
     </Grid>
