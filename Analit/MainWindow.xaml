@@ -43,5 +43,8 @@
         </ListView>
         <Label x:Name="LabelID" Grid.Column="0" Grid.Row="3" FontSize="20">Код: 1</Label>
         <Label x:Name="LabelPrice" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" FontSize="20">Цена : 00.00</Label>
+        <Label x:Name="LabelCount" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2" FontSize="20">Кол-во : 1</Label>
+        <Label x:Name="LabelAmount" Grid.Column="6" Grid.Row="3" Grid.ColumnSpan="2" FontSize="20">Сумма : 00.00</Label>
+        <Label x:Name="LabelTitle" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="8" FontSize="30">Наименование</Label>
     </Grid>
 </Window>
